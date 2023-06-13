@@ -25,9 +25,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: release-artifacts
-          path: release
+          path: path/to/artifact
       - name: Generate checksum
-        uses: suslmk-lee/actions-generate-checksum@v1
+        uses: jmgilman/actions-generate-checksum@v1
         with:
           patterns: |
             release/*.zip
