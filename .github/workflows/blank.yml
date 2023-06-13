@@ -21,6 +21,11 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
+      - name: upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-artifacts
+          path: path/to/artifact
       - name: Download releaseartifacts
         uses: actions/download-artifact@v2
         with:
