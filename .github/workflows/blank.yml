@@ -21,6 +21,13 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
+      - name: Release 생성 
+        uses: actions/create-release@v1
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with: 
+          tag_name: ${{ steps.extract_version_name.outputs.version }} 
+          release_name: ${{ steps.extract_version_name.outputs.version }}
       - name: Download releaseartifacts
         uses: actions/download-artifact@v2
         with:
