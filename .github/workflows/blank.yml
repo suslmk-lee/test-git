@@ -26,6 +26,11 @@ jobs:
         with:
           name: release-artifacts
           path: path/to/artifact
+  deploy:
+    name: aa
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
       - name: Download releaseartifacts
         uses: actions/download-artifact@v2
         with:
